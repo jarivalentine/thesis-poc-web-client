@@ -7,25 +7,23 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const response = await UserService.login(username, password);
-    const data = await response.json();
+    const response = await UserService.register(username, password);
     if (response.ok) {
-      localStorage.setItem("username", username);
-      localStorage.setItem("token", data);
-      navigate("/");
+      navigate("/login");
     } else {
       setUsername("");
       setPassword("");
+      const data = await response.json();
       alert(data.error);
     }
   };
 
   return (
     <main className="flex flex-col justify-center items-center gap-4 h-screen">
-      <h1 className="text-2xl font-medium">Sign in</h1>
-      <form className="flex flex-col gap-4 w-64" onSubmit={handleLogin}>
+      <h1 className="text-2xl font-medium">Sign up</h1>
+      <form className="flex flex-col gap-4 w-64" onSubmit={handleRegister}>
         <input
           className="bg-gray p-2 rounded-xl"
           type="text"
@@ -45,13 +43,13 @@ export default function Login() {
         <input
           className="bg-blue text-white p-2 rounded-xl cursor-pointer"
           type="submit"
-          value="Login"
+          value="Register"
         />
       </form>
       <p>
-        Don't have an account?{" "}
-        <Link to="/register" className="text-blue font-medium hover:underline">
-          Sing up
+        Already have an account?{" "}
+        <Link to="/login" className="text-blue font-medium hover:underline">
+          Sing in
         </Link>
       </p>
     </main>
