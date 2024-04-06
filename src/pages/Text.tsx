@@ -11,8 +11,8 @@ export default function Text() {
     <>
       <Header username={username} workspacename={name as string} />
       <Nav workspacename={name as string} />
-      <main className="w-5/6 inline-block">
-        <h2 className="text-center text-2xl mb-8">Text</h2>
+      <main className="w-5/6 inline-block p-4">
+        <h2 className="text-2xl mb-8">Text</h2>
       </main>
     </>
   );

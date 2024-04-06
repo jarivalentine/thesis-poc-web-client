@@ -8,8 +8,8 @@ export default function Nav({
   const location = useLocation();
 
   return (
-    <nav className="w-1/6 inline-block align-top">
-      <ul className="flex flex-col text-center [&>li]:mx-4 [&>li>a]:p-4 [&>li>a]:rounded-lg [&>li>a]:block">
+    <nav className="w-1/6 inline-block align-top px-4">
+      <ul className="flex flex-col text-center [&>li>a]:p-4 [&>li>a]:rounded-lg [&>li>a]:block">
         <li>
           <NavLink
             to={`/${workspacename}`}

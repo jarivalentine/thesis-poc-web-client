@@ -43,4 +43,19 @@ export default class UserService {
 
     return response;
   }
+
+  static async invite(name: string, username: string) {
+    const fullUrl = `${config.baseUrl}/workspace/${name}/invite`;
+
+    const response = await fetch(fullUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({ username }),
+    });
+
+    return response;
+  }
 }
