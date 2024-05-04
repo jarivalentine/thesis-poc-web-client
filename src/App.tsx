@@ -5,7 +5,6 @@ import Register from "./pages/Register";
 import Workspace from "./pages/Workspace";
 import Board from "./pages/Board";
 import Design from "./pages/Design";
-import Text from "./pages/Text";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <Route path="/:name" element={<Workspace />} />
         <Route path="/:name/board" element={<Board />} />
         <Route path="/:name/design" element={<Design />} />
-        <Route path="/:name/text" element={<Text />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

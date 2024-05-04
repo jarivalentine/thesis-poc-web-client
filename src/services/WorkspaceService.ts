@@ -30,7 +30,7 @@ export default class UserService {
   }
 
   static async create(name: string) {
-    const fullUrl = `${config.baseUrl}/register`;
+    const fullUrl = `${config.baseUrl}/workspace`;
 
     const response = await fetch(fullUrl, {
       method: "POST",

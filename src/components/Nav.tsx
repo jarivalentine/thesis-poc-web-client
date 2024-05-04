@@ -46,18 +46,6 @@ export default function Nav({
             Design
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to={`/${workspacename}/text`}
-            className={
-              location.pathname == `/${workspacename}/text`
-                ? "bg-blue text-white"
-                : ""
-            }
-          >
-            Text
-          </NavLink>
-        </li>
       </ul>
     </nav>
   );
