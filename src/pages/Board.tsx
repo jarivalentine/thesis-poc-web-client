@@ -14,14 +14,13 @@ type Task = {
 
 export default function Board() {
   const navigate = useNavigate();
-  const username = useAuthentication();
+  const { username, token } = useAuthentication();
   const { name } = useParams();
   const [socket, setSocket] = useState<Socket>();
   const [newTask, setNewTask] = useState("");
   const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
     const newSocket = io("http://localhost:3000", {
       auth: { token },
       query: { workspace: name },
@@ -31,7 +30,7 @@ export default function Board() {
     return () => {
       newSocket.close();
     };
-  }, [name]);
+  }, [name, token]);
 
   useEffect(() => {
     async function fetchTasks() {

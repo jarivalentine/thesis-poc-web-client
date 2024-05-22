@@ -7,7 +7,7 @@ import WorkspaceService from "../services/WorkspaceService";
 
 export default function Workspace() {
   const navigate = useNavigate();
-  const username = useAuthentication();
+  const { username } = useAuthentication();
   const [inviteUsername, setInviteUsername] = useState("");
   const { name } = useParams();
   const [workspace, setWorkspace] = useState({ name: "", users: [] });

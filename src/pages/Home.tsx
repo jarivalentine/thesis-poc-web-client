@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import WorkspaceService from "../services/WorkspaceService";
 
 export default function Login() {
-  const username = useAuthentication();
+  const { username } = useAuthentication();
   const [newWorkspace, setNewWorkspace] = useState("");
   const [workspaces, setWorkspaces] = useState<{ name: string }[]>([]);
 

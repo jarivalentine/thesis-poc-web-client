@@ -7,7 +7,7 @@ import { Socket, io } from "socket.io-client";
 import cursorSvg from "../assets/img/svg/cursor.svg";
 
 export default function Design() {
-  const username = useAuthentication();
+  const { username } = useAuthentication();
   const { name } = useParams();
   const [socket, setSocket] = useState<Socket>();
   const [userPositions, setUserPositions] = useState<{
